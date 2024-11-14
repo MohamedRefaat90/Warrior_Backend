@@ -1,0 +1,88 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+env/
+venv/
+env.bak/
+venv.bak/
+*.egg
+*.egg-info/
+dist/
+build/
+*.whl
+
+# Django stuff:
+*.log
+*.pot
+*.pyc
+db.sqlite3
+instance/
+media/
+*.pyo
+*.pyd
+
+# If you are using SQLite:
+*.sqlite3
+
+# Django migrations
+**/migrations/**  # Ignore migrations folder in each app, unless specifically managed
+
+# Pytest and other test tools
+.coverage
+.tox/
+.pytest_cache/
+.nox/
+htmlcov/
+
+# Environments and virtual environments
+venv/
+ENV/
+.venv/
+.env
+.env.*  
+# For .env files, they often contain sensitive data
+# Comment out if you commit the .env for production or CI/CD
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# PyCharm
+.idea/
+
+# VS Code
+.vscode/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# pyenv
+.python-version
+
+# Celery
+celerybeat-schedule
+
+# Static files
+staticfiles/
+*.mp4
+*.png
+*.jpg
+
+# Local cache and backup files
+*.bak
+*.swp
+*.tmp
+*.~ 
+
+# Logs and databases
+*.log
+*.sqlite3
+.DS_Store  # macOS
