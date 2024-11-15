@@ -2,6 +2,8 @@ from rest_framework.permissions import AllowAny
 from knox.views import LoginView as KnoxLoginView
 from rest_framework.response import Response
 from ..serializers.login import LoginSerializer
+from ..models import Users
+from django.dispatch import receiver
 
 class LoginView(KnoxLoginView):
     serializer_class = LoginSerializer
@@ -25,4 +27,4 @@ class LoginView(KnoxLoginView):
                 },
             'token': token
         })
- 
+

@@ -44,10 +44,14 @@ INSTALLED_APPS = [
     'rest_framework',
     'knox',
     'drf_spectacular',
+    'django.contrib.sites',
+    
+    # Apps
     'Exercises',
     'User',
     'WorkoutSet',
 ]
+
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': ('knox.auth.TokenAuthentication',),
@@ -179,3 +183,20 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'APP': {
+            'client_id': os.environ.get('GOOGLE_CLIENT_ID'),
+            'secret': os.environ.get('GOOGLE_CLIENT_SECRET'),
+            'key': ''
+        },
+         'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        },
+    }
+}
