@@ -112,10 +112,10 @@ WSGI_APPLICATION = 'Warrior_Project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': "Warrior",
+        'NAME': "mohamedrefaat90$Warrior",
         'USER': "mohamedrefaat90",
         'PASSWORD': "test1234T@",
-        'HOST': "localhost",
+        'HOST': "mohamedrefaat90.mysql.pythonanywhere-services.com",
         'PORT': '3306',
     }
 }
