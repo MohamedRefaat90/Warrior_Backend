@@ -14,9 +14,10 @@ from datetime import timedelta
 import os
 from pathlib import Path
 from dotenv import load_dotenv
+import pymysql
 
 load_dotenv()
-
+pymysql.install_as_MySQLdb()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -111,10 +112,10 @@ WSGI_APPLICATION = 'Warrior_Project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ.get('DATABASE_NAME'),
-        'USER': os.environ.get('DATABASE_USER'),
-        'PASSWORD': os.environ.get('DATABASE_PASSWORD'),
-        'HOST': os.environ.get('DATABASE_HOST'),
+        'NAME': "Warrior",
+        'USER': "mohamedrefaat90",
+        'PASSWORD': "test1234T@",
+        'HOST': "localhost",
         'PORT': '3306',
     }
 }
