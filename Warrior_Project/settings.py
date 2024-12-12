@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'Exercises',
     'User',
     'WorkoutSet',
+    'webhook'
 ]
 
 REST_FRAMEWORK = {
