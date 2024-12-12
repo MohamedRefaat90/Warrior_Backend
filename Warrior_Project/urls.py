@@ -28,7 +28,7 @@ urlpatterns = [
     path('',include('Exercises.urls')),
     path('auth/',include('User.urls')),
     path('workout/',include('WorkoutSet.urls')),
-    path('',handle_webhook,name='webhook'),
+    path('webhook/',handle_webhook,name='webhook'),
 ]
 
 # Add media URL pattern for development only
