@@ -19,7 +19,6 @@ from django.urls import path,include
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 from django.conf import settings
 from django.conf.urls.static import static
-from webhook.views import handle_webhook
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,7 +27,7 @@ urlpatterns = [
     path('',include('Exercises.urls')),
     path('auth/',include('User.urls')),
     path('workout/',include('WorkoutSet.urls')),
-    path('webhook/',handle_webhook,name='webhook'),
+    path('webhook/',include('webhook.urls')),
 ]
 
 # Add media URL pattern for development only
