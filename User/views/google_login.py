@@ -18,7 +18,7 @@ def google_sign_in(request):
 
     try:
         # Verify the token
-        userData = id_token.verify_oauth2_token(token, requests.Request(), os.environ['GOOGLE_CLIENT_ID'])
+        userData = id_token.verify_oauth2_token(token, requests.Request(), os.environ.get('GOOGLE_CLIENT_ID'))
         
         # Extract user information
         email = userData.get('email')
