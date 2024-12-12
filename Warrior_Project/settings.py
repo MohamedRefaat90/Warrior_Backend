@@ -49,7 +49,7 @@ INSTALLED_APPS = [
 
     # Apps
     'Exercises',
-    # 'User',
+    'User',
     'WorkoutSet',
     'webhook'
 ]
