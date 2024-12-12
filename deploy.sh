@@ -5,4 +5,4 @@ pip freeze > requirements.txt
 pip install -r requirements.txt
 python manage.py makemigrations
 python manage.py migrate
-touch /var/www/mohamedrefaat90_wsgi.py  # Restart the app
+touch /var/www/mohamedrefaat90_pythonanywhere_com_wsgi.py  # Restart the app
