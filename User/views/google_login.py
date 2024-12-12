@@ -18,27 +18,27 @@ def google_sign_in(request):
 
     try:
         # Verify the token
-        userData = id_token.verify_oauth2_token(token, requests.Request(), os.environ['GOOGLE_CLIENT_ID'])
-        
+        userData = id_token.verify_oauth2_token(token, requests.Request(), os.environ.get('GOOGLE_CLIENT_ID'))
+
         # Extract user information
         email = userData.get('email')
         name = userData.get('name')
         picture = userData.get('picture')
-        
+
         if not email:
             return Response({"error": "Email not provided in token."}, status=400)
 
         # Get or create user
         user, created = Users.objects.get_or_create(email=email)
-        
+
         if not created:
-            user.username = name 
+            user.username = name
             # user.profile_picture = picture  # If you have a profile_picture field
             user.save()
 
         # Generate JWT token
         refresh = RefreshToken.for_user(user)
-        
+
         # Update last login
         update_last_login(None, user)
 

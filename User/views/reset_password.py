@@ -6,13 +6,15 @@ from ..serializers.reset_password import PasswordResetRequestSerializer, OTPVeri
 # Create your views here.
 
 class PasswordResetRequestView(APIView):
+    serializer_class = PasswordResetRequestSerializer
+
     def post(self, request):
-        serializer = PasswordResetRequestSerializer(data=request.data)
+        serializer = self.serializer_class(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response({"detail": "OTP has been sent to your email."}, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-    
+
 class PasswordResetOTPVerificationView(APIView):
     def post(self, request):
         serializer = OTPVerificationSerializer(data=request.data)
@@ -20,7 +22,7 @@ class PasswordResetOTPVerificationView(APIView):
             serializer.save()
             return Response({"detail": "OTP verified. You may now reset your password."}, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-    
+
 class PasswordResetConfirmView(APIView):
     def post(self, request):
         serializer = PasswordConfirmSerializer(data=request.data)
